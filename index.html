@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惠民超市集团 - 企业历史文化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // 配置Tailwind自定义颜色和字体
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F4C81',      // 深蓝色主色调
+                        secondary: '#FF7F2A',    // 橙色辅助色
+                        neutral: '#F5F5F0',      // 浅灰背景色
+                        dark: '#333333',         // 深色文本
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .timeline-line {
+                @apply absolute left-6 md:left-1/2 h-full w-0.5 bg-primary/30 transform md:translate-x-px;
+            }
+            .timeline-dot {
+                @apply absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-primary transform -translate-x-1/2 border-4 border-white;
+            }
+            .hover-lift {
+                @apply transition-transform duration-300 hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                    <i class="fa fa-shopping-bag text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-primary">惠民超市集团</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition-colors">首页</a>
+                <a href="#about" class="font-medium hover:text-primary transition-colors">企业简介</a>
+                <a href="#history" class="font-medium hover:text-primary transition-colors">发展历程</a>
+                <a href="#culture" class="font-medium hover:text-primary transition-colors">企业文化</a>
+                <a href="#honors" class="font-medium hover:text-primary transition-colors">荣誉资质</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我们</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-dark focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="py-2 font-medium hover:text-primary transition-colors">首页</a>
+                <a href="#about" class="py-2 font-medium hover:text-primary transition-colors">企业简介</a>
+                <a href="#history" class="py-2 font-medium hover:text-primary transition-colors">发展历程</a>
+                <a href="#culture" class="py-2 font-medium hover:text-primary transition-colors">企业文化</a>
+                <a href="#honors" class="py-2 font-medium hover:text-primary transition-colors">荣誉资质</a>
+                <a href="#contact" class="py-2 font-medium hover:text-primary transition-colors">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-24 md:pt-0 min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1080/1920/1080" alt="超市集团门店外观" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 py-20 md:py-0 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight text-shadow mb-6">
+                    惠民超市<br>
+                    <span class="text-secondary">30年品质传承</span>
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-2xl">
+                    从一家社区小店到全国连锁零售集团，惠民超市始终秉持"以民为本，惠民利民"的经营理念，为千万家庭提供优质商品与服务。
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#history" class="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium rounded-full transition-all shadow-lg hover:shadow-xl hover-lift">
+                        探索发展历程
+                    </a>
+                    <a href="#culture" class="px-8 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium rounded-full border border-white/30 transition-all hover-lift">
+                        了解企业文化
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <a href="#about" class="flex flex-col items-center">
+                <span class="mb-2 text-sm">向下滚动</span>
+                <i class="fa fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 企业简介 -->
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">企业简介</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="aspect-video rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://picsum.photos/id/42/800/600" alt="惠民超市集团总部" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="text-3xl font-bold text-primary">30+</div>
+                        <div class="text-sm text-dark/70">年零售行业经验</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-dark">惠民超市集团</h3>
+                    <p class="text-dark/80 mb-6 leading-relaxed">
+                        惠民超市集团创立于1993年，是中国领先的连锁超市集团之一。经过30年的稳健发展，已从最初的一家社区超市，成长为拥有超过500家门店、覆盖全国30多个省市的大型零售企业。
+                    </p>
+                    <p class="text-dark/80 mb-8 leading-relaxed">
+                        集团始终坚持"新鲜、优质、平价、便利"的经营宗旨，致力于为消费者提供高品质的商品和愉悦的购物体验。我们注重供应链建设，建立了覆盖全国的采购和配送网络，确保商品的新鲜度和性价比。
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm hover-lift">
+                            <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                            <div class="text-sm text-dark/70">连锁门店</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm hover-lift">
+                            <div class="text-3xl font-bold text-primary mb-2">30+</div>
+                            <div class="text-sm text-dark/70">覆盖省市</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm hover-lift">
+                            <div class="text-3xl font-bold text-primary mb-2">15k+</div>
+                            <div class="text-sm text-dark/70">员工总数</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-sm hover-lift">
+                            <div class="text-3xl font-bold text-primary mb-2">10M+</div>
+                            <div class="text-sm text-dark/70">服务顾客</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展历程 -->
+    <section id="history" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">发展历程</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto">
+                    三十年风雨兼程，惠民超市从一家社区小店成长为全国性零售集团，每一步都凝聚着全体员工的智慧与汗水。
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- 时间线 -->
+                <div class="timeline-line"></div>
+                
+                <!-- 1993年 -->
+                <div class="relative pl-16 md:pl-0 md:mb-20">
+                    <div class="timeline-dot" style="top: 0;"></div>
+                    <div class="md:w-5/12 md:ml-0 md:text-right mb-8 md:mb-0 md:pr-8">
+                        <span class="inline-block px-4 py-1 bg-primary text-white text-sm rounded-full mb-3">1993年</span>
+                        <h3 class="text-xl font-bold mb-2">公司创立</h3>
+                        <p class="text-dark/70">
+                            第一家惠民超市在市南区开业，面积仅80平方米，主要经营日常生活用品，凭借"惠民"理念迅速赢得周边居民认可。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 top-0 transform translate-x-8 w-5/12">
+                        <img src="https://picsum.photos/id/1060/600/400" alt="1993年第一家惠民超市" class="rounded-lg shadow-lg hover-lift">
+                    </div>
+                </div>
+                
+                <!-- 2000年 -->
+                <div class="relative pl-16 md:pl-0 md:mb-20">
+                    <div class="timeline-dot" style="top: 0;"></div>
+                    <div class="md:w-5/12 md:ml-auto md:pl-8">
+                        <span class="inline-block px-4 py-1 bg-primary text-white text-sm rounded-full mb-3">2000年</span>
+                        <h3 class="text-xl font-bold mb-2">区域扩张</h3>
+                        <p class="text-dark/70">
+                            门店数量达到10家，覆盖全市各主要城区，建立了第一个现代化配送中心，实现统一采购和配送，迈出连锁化发展第一步。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-0 top-0 transform -translate-x-8 w-5/12">
+                        <img src="https://picsum.photos/id/13/600/400" alt="2000年惠民超市配送中心" class="rounded-lg shadow-lg hover-lift">
+                    </div>
+                </div>
+                
+                <!-- 2008年 -->
+                <div class="relative pl-16 md:pl-0 md:mb-20">
+                    <div class="timeline-dot" style="top: 0;"></div>
+                    <div class="md:w-5/12 md:ml-0 md:text-right mb-8 md:mb-0 md:pr-8">
+                        <span class="inline-block px-4 py-1 bg-primary text-white text-sm rounded-full mb-3">2008年</span>
+                        <h3 class="text-xl font-bold mb-2">跨省发展</h3>
+                        <p class="text-dark/70">
+                            走出本省，在周边三个省份开设门店，门店总数突破50家，正式更名为"惠民超市集团"，引入现代企业管理制度。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 top-0 transform translate-x-8 w-5/12">
+                        <img src="https://picsum.photos/id/292/600/400" alt="2008年惠民超市集团总部" class="rounded-lg shadow-lg hover-lift">
+                    </div>
+                </div>
+                
+                <!-- 2015年 -->
+                <div class="relative pl-16 md:pl-0 md:mb-20">
+                    <div class="timeline-dot" style="top: 0;"></div>
+                    <div class="md:w-5/12 md:ml-auto md:pl-8">
+                        <span class="inline-block px-4 py-1 bg-primary text-white text-sm rounded-full mb-3">2015年</span>
+                        <h3 class="text-xl font-bold mb-2">电商转型</h3>
+                        <p class="text-dark/70">
+                            上线惠民线上商城，实现"线上线下一体化"运营模式，门店数量突破200家，建立生鲜冷链系统，强化生鲜品类优势。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-0 top-0 transform -translate-x-8 w-5/12">
+                        <img src="https://picsum.photos/id/48/600/400" alt="2015年惠民线上商城上线" class="rounded-lg shadow-lg hover-lift">
+                    </div>
+                </div>
+                
+                <!-- 2023年 -->
+                <div class="relative pl-16 md:pl-0">
+                    <div class="timeline-dot" style="top: 0;"></div>
+                    <div class="md:w-5/12 md:ml-0 md:text-right mb-8 md:mb-0 md:pr-8">
+                        <span class="inline-block px-4 py-1 bg-primary text-white text-sm rounded-full mb-3">2023年</span>
+                        <h3 class="text-xl font-bold mb-2">全面发展</h3>
+                        <p class="text-dark/70">
+                            门店总数突破500家，覆盖全国30多个省市，年销售额突破百亿元，荣获"中国零售百强企业"称号，持续引领行业发展。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 top-0 transform translate-x-8 w-5/12">
+                        <img src="https://picsum.photos/id/26/600/400" alt="2023年惠民超市集团全国布局" class="rounded-lg shadow-lg hover-lift">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业文化 -->
+    <section id="culture" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">企业文化</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-white/80 max-w-2xl mx-auto">
+                    企业文化是惠民超市集团发展的灵魂，指引着我们不断前行，服务社会。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 企业使命 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all hover-lift">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">企业使命</h3>
+                    <p class="text-white/80">
+                        为消费者提供优质、新鲜、实惠的商品和便捷的服务，提升人们的生活品质。
+                    </p>
+                </div>
+                
+                <!-- 企业愿景 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all hover-lift">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">企业愿景</h3>
+                    <p class="text-white/80">
+                        成为中国最受信赖的零售企业，引领行业创新发展，创造更大的社会价值。
+                    </p>
+                </div>
+                
+                <!-- 核心价值观 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all hover-lift">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">核心价值观</h3>
+                    <p class="text-white/80">
+                        诚信经营、客户至上、精益求精、创新进取、合作共赢、回报社会。
+                    </p>
+                </div>
+                
+                <!-- 经营理念 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all hover-lift">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-lightbulb-o text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">经营理念</h3>
+                    <p class="text-white/80">
+                        以民为本，惠民利民；品质为先，服务至上；创新驱动，持续发展。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 企业精神 -->
+            <div class="mt-16 max-w-3xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-6">企业精神</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-secondary text-xl font-bold mb-2">敬业</div>
+                        <div class="text-white/70 text-sm">热爱岗位，尽职尽责</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-secondary text-xl font-bold mb-2">务实</div>
+                        <div class="text-white/70 text-sm">脚踏实地，注重实效</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-secondary text-xl font-bold mb-2">创新</div>
+                        <div class="text-white/70 text-sm">勇于探索，不断突破</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-secondary text-xl font-bold mb-2">奉献</div>
+                        <div class="text-white/70 text-sm">乐于付出，回报社会</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 企业故事 -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-10">企业故事</h3>
+                <div class="bg-white/5 p-8 rounded-lg">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1">
+                            <img src="https://picsum.photos/id/325/600/800" alt="惠民超市创始人故事" class="rounded-lg shadow-lg w-full h-auto hover-lift">
+                        </div>
+                        <div class="md:col-span-2">
+                            <h4 class="text-xl font-bold mb-4 text-secondary">从"惠民"初心到行业标杆</h4>
+                            <p class="text-white/80 mb-4 leading-relaxed">
+                                1993年，创始人李明先生在市南区开设了第一家惠民超市，面积虽小，但"让老百姓买得放心、用得安心、花得舒心"的理念却深深扎根。当时，周边居民经常面临商品价格虚高、质量参差不齐的问题。
+                            </p>
+                            <p class="text-white/80 mb-4 leading-relaxed">
+                                李老先生坚持亲自挑选商品，杜绝假冒伪劣产品，并且承诺"同类商品，价格最低"。有一次，为了兑现对顾客的承诺，他甚至亏本销售了一批蔬菜，就是为了维护"惠民"的信誉。
+                            </p>
+                            <p class="text-white/80 leading-relaxed">
+                                这份诚信经营的理念代代相传，成为惠民超市集团发展的根基。如今，虽然企业规模不断扩大，但"惠民利民"的初心从未改变，这正是我们能够赢得消费者信赖的根本原因。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社会责任 -->
+    <section class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">社会责任</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto">
+                    惠民超市集团始终牢记社会责任，积极参与公益事业，回报社会，践行企业公民的责任与担当。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/142/600/400" alt="扶贫助农项目" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">扶贫助农</h3>
+                        <p class="text-dark/70 mb-4">
+                            开展"农超对接"项目，直接从贫困地区采购农产品，帮助农民增收，已累计采购超过10亿元农产品，惠及10万农户。
+                        </p>
+                        <a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/267/600/400" alt="社区公益活动" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">社区服务</h3>
+                        <p class="text-dark/70 mb-4">
+                            定期组织社区公益活动，为孤寡老人送温暖，开展环保宣传，举办儿童安全教育讲座等，积极参与社区建设。
+                        </p>
+                        <a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all hover-lift">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/119/600/400" alt="环保可持续发展" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-primary">绿色环保</h3>
+                        <p class="text-dark/70 mb-4">
+                            推行绿色包装，减少一次性塑料制品使用，所有门店使用节能设备，积极推动可持续发展，共建美好家园。
+                        </p>
+                        <a href="#" class="text-secondary font-medium hover:underline inline-flex items-center">
+                            了解更多 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉资质 -->
+    <section id="honors" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">荣誉资质</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-dark/70 max-w-2xl mx-auto">
+                    这些荣誉是社会各界对我们的认可，更是激励我们不断前进的动力。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">中国零售百强</h3>
+                    <p class="text-sm text-dark/70">2018-2023连续六年</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-certificate"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">AAA级信用企业</h3>
+                    <p class="text-sm text-dark/70">2019-2023</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">消费者信得过单位</h3>
+                    <p class="text-sm text-dark/70">连续十年获得</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">绿色零售企业</h3>
+                    <p class="text-sm text-dark/70">2021-2023</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">慈善捐赠先进单位</h3>
+                    <p class="text-sm text-dark/70">2020-2023</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">中国连锁经营标杆企业</h3>
+                    <p class="text-sm text-dark/70">2022年度</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">最佳雇主企业</h3>
+                    <p class="text-sm text-dark/70">2021-2023</p>
+                </div>
+                
+                <div class="bg-neutral p-6 rounded-lg text-center hover:shadow-md transition-all hover-lift">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-truck"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">供应链管理创新奖</h3>
+                    <p class="text-sm text-dark/70">2022年度</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">联系我们</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-white/80 max-w-2xl mx-auto">
+                    欢迎关注惠民超市集团，了解更多企业动态和信息。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fa fa-map-marker text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">集团总部地址</h4>
+                                <p class="text-white/80">北京市朝阳区建国路88号惠民大厦15层</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fa fa-phone text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">联系电话</h4>
+                                <p class="text-white/80">400-888-9999</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fa fa-envelope text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">电子邮箱</h4>
+                                <p class="text-white/80">info@huimin-group.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fa fa-clock-o text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">工作时间</h4>
+                                <p class="text-white/80">周一至周五: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">关注我们</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-colors flex items-center justify-center">
+                                <i class="fa fa-weixin text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-colors flex items-center justify-center">
+                                <i class="fa fa-weibo text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-colors flex items-center justify-center">
+                                <i class="fa fa-youtube-play text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary transition-colors flex items-center justify-center">
+                                <i class="fa fa-instagram text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">留言咨询</h3>
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-secondary focus:outline-none text-white placeholder-white/50" placeholder="请输入您的姓名">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-1">电话</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-secondary focus:outline-none text-white placeholder-white/50" placeholder="请输入您的电话">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">邮箱</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-secondary focus:outline-none text-white placeholder-white/50" placeholder="请输入您的邮箱">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">留言内容</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:border-secondary focus:outline-none text-white placeholder-white/50" placeholder="请输入您的留言内容"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-medium rounded-lg transition-all shadow-lg hover:shadow-xl hover-lift">
+                            提交留言
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white/70 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                            <i class="fa fa-shopping-bag text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">惠民超市集团</span>
+                    </div>
+                    <p class="mb-6">
+                        惠民超市集团创立于1993年，是中国领先的连锁超市集团之一，始终秉持"以民为本，惠民利民"的经营理念。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/70 hover:text-secondary transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-secondary transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-secondary transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-secondary transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-secondary transition-colors">首页</a></li>
+                        <li><a href="#about" class="hover:text-secondary transition-colors">企业简介</a></li>
+                        <li><a href="#history" class="hover:text-secondary transition-colors">发展历程</a></li>
+                        <li><a href="#culture" class="hover:text-secondary transition-colors">企业文化</a></li>
+                        <li><a href="#honors" class="hover:text-secondary transition-colors">荣誉资质</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">业务板块</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-secondary transition-colors">大型超市</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">社区便利店</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">线上商城</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">生鲜配送</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">供应链管理</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">加盟合作</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6">客户服务</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-secondary transition-colors">常见问题</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">会员服务</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">投诉建议</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">用户协议</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">400-888-9999</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p>© 2023 惠民超市集团有限公司 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all z-50 hover:bg-secondary">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+        
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = [].slice.call(document.querySelectorAll("img"));
+            
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src || lazyImage.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
