@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 30px;
 }
 
 body {
@@ -159,26 +158,35 @@ tr:nth-child(even) {
     background-position: center;
     background-size: 40px;
 }
-
-/* 响应式样式 */
+/* 中等屏幕调整 */
 @media (max-width: 768px) {
-    #carousel {
-        height: 250px;
-    }
-    
-    th, td {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 576px) {
     .nav-logo {
         width: 15% !important;
     }
- 
-    footer .flex {
-        flex-direction: column;
-        text-align: center;
+    .nav-item {
+        width: 42.5% !important;
+        font-size: 18px;
+    }
+}
+
+/* 小屏幕手机调整 */
+@media (max-width: 576px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+    .nav-container {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .nav-logo {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-bottom: 10px;
+    }
+    .nav-item {
+        width: 50% !important;
+        padding: 10px 0;
+        font-size: 16px;
     }
 }
