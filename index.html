@@ -1,175 +1,380 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>百合集团官网</title>
+    <meta name="keywords" content="百合超市,百合集团,超市招商,连锁超市,零售超市">
+    <meta name="description" content="百合超市是连锁超市品牌，提供优质商品与招商服务，门店遍布多地">
     <link rel="icon" href="ico.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>百合集团官网</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            background-color: #cddc39;
+            padding: 0 5px;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            border-bottom: 2px solid #a0af22;
+        }
+        
+        .navbar-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .navbar h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .logo {
+            height: 60px;
+            border: 2px solid #a0af22;
+            border-radius: 8px;
+        }
+        
+        /* 内容区域通用样式 */
+        .content {
+            padding: 10px 5px;
+        }
+        
+        .section {
+            width: calc(100% - 10px);
+            margin: 15px auto;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        
+        .section h2 {
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #cddc39;
+            color: #333;
+        }
+        
+        /* 轮播图样式 */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+        }
+        
+        .carousel-container {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        table th {
+            background-color: #f0f7d4;
+        }
+        
+        /* 颜色方案 */
+        .history-section {
+            border-color: #a8d1ff;
+            background-color: #f0f7ff;
+        }
+        
+        .model-section {
+            border-color: #ffd9a8;
+            background-color: #fff7f0;
+        }
+        
+        .products-section {
+            border-color: #a8ffc4;
+            background-color: #f0fff5;
+        }
+        
+        .philosophy-section {
+            border-color: #d9a8ff;
+            background-color: #f9f0ff;
+        }
+        
+        .stores-section {
+            border-color: #ffa8a8;
+            background-color: #fff0f0;
+        }
+        
+        .investment-section {
+            border-color: #a8e6ff;
+            background-color: #f0faff;
+        }
+        
+        .contact-section {
+            border-color: #333;
+            background-color: #f0f0f0;
+        }
+        
+        /* 联系方式样式 */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dycode {
+            height: 40px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar h1 {
+                font-size: 18px;
+            }
+            
+            .carousel {
+                height: 200px;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- 顶栏 -->
-    <header class="top-bar">
-        <div class="container">
-            <div class="top-content">
-                <h1 class="main-title">百合超市</h1>
-                <img src="logo.png" alt="百合超市logo" class="logo-img">
-            </div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="logo.png" alt="百合超市logo" class="logo">
+            <h1>百合超市</h1>
         </div>
-    </header>
-
-    <!-- 中间栏 -->
-    <main class="middle-bar">
-        <!-- 企业简介部分 -->
-        <section class="company-intro">
-            <div class="container">
-                <!-- 企业历史 -->
-                <div class="intro-section">
-                    <h2 class="section-title">企业历史</h2>
-                    <div class="section-content">
-                        <p>百合超市前身是广东粤客来超市，成立于2009年！2016年进军重庆市场，重庆旗下有好润佳、好又多，中尚购物等商超门店，另有快捷酒店等公司其他业态。秉承着向行业领跑者胖东来、盒马鲜生，山姆会员店，河南鲜风，永辉调改门店等优秀企业学习，引入超前理念及优秀模式，不断发展壮大！</p>
+    </nav>
+    
+    <!-- 内容区域 -->
+    <div class="content">
+        <!-- 企业历史 -->
+        <section class="section history-section">
+            <h2>企业历史</h2>
+            <p>百合超市创立以来，始终秉持"真诚和善良，品质和安全"的经营理念，逐步发展成为区域知名的连锁超市品牌。经过多年发展，已在四川内江、重庆大足等地建立起多家大型连锁超市，为当地居民提供优质的商品和服务。</p>
+        </section>
+        
+        <!-- 超市模式 -->
+        <section class="section model-section">
+            <h2>超市模式</h2>
+            <p>百合超市采用"超市区+外租区"的复合型经营模式，打造一站式购物体验。超市区提供丰富的商品选择，外租区引入各类配套服务，满足顾客多样化需求。</p>
+            <p>目前已形成两大主力门店：威远万达店(8000㎡)和大足渝西广场店(9900㎡)，均位于城市核心商圈，交通便利，客流稳定。</p>
+        </section>
+        
+        <!-- 销售商品 -->
+        <section class="section products-section">
+            <h2>销售商品</h2>
+            <table>
+                <tr>
+                    <th>商品类别</th>
+                    <th>主要商品</th>
+                </tr>
+                <tr>
+                    <td>生鲜食品</td>
+                    <td>熟食、烤鸭、烤鸡、低温奶品、寿司、切配净菜</td>
+                </tr>
+                <tr>
+                    <td>包装食品</td>
+                    <td>包装食品、速冻食品、散装食品、散装干货、进口食品</td>
+                </tr>
+                <tr>
+                    <td>日用百货</td>
+                    <td>日用百货、文玩体</td>
+                </tr>
+                <tr>
+                    <td>外租区商品</td>
+                    <td>黄金珠宝、服装、内衣、鞋类、眼镜、美妆护肤等</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- 经营理念 -->
+        <section class="section philosophy-section">
+            <h2>经营理念</h2>
+            <p>百合超市始终坚持从"心"出发，坚信真诚和善良，坚定品质和安全。我们认为：</p>
+            <ul>
+                <li>卖场调整的最大价值是：商品质量更安全、顾客购物更放心</li>
+                <li>优秀的商业不是规模，而是传承幸福和品质</li>
+                <li>发自内心的喜欢高于一切（PASSION BEATS ALL）</li>
+                <li>让生活更美好（Make Life Better）</li>
+                <li>因为真诚才会创造美好（WITH SINCERITY WE BRING FORTH BEAUTY）</li>
+            </ul>
+        </section>
+        
+        <!-- 旗下门店 -->
+        <section class="section stores-section">
+            <h2>旗下门店</h2>
+            <table>
+                <tr>
+                    <th>门店名称</th>
+                    <th>地址</th>
+                    <th>面积</th>
+                </tr>
+                <tr>
+                    <td>威远万达百合超市</td>
+                    <td>四川省内江市威远万达</td>
+                    <td>8000㎡</td>
+                </tr>
+                <tr>
+                    <td>大足渝西广场百合超市</td>
+                    <td>重庆市大足双桥经开区渝西商业广场</td>
+                    <td>9900㎡</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- 招商广告 -->
+        <section class="section investment-section">
+            <h2>招商广告</h2>
+            <p>百合超市双店同步盛大招商，诚邀优质商家入驻！</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-item">
+                        <img src="1.jpg" alt="招商图片1" class="carousel-img">
                     </div>
-                </div>
-
-                <!-- 超市模式 -->
-                <div class="intro-section">
-                    <h2 class="section-title">超市模式</h2>
-                    <div class="section-content">
-                        <p>威远百合超市是一家具备标准传统商超背景，向零售行业领先顶流转变中的成长发展企业，在转变过程中不断培育发展起来，能一站式满足顾客购物、休闲、餐食、现场加工的现代综合式购物广场。</p>
+                    <div class="carousel-item">
+                        <img src="2.jpg" alt="招商图片2" class="carousel-img">
                     </div>
-                </div>
-
-                <!-- 销售商品 -->
-                <div class="intro-section">
-                    <h2 class="section-title">销售商品</h2>
-                    <div class="section-content">
-                        <p>以经营优质生鲜农业产品，生猛海鲜产品，鲜肉家禽，加工熟食，地方特产，特色餐饮，冷冻冷藏产品，休闲零食，酒水奶饮，米面粮油，网红产品，日用百货、小家电，儿童玩具，文体用品，服装鞋帽等精选类别品牌。</p>
+                    <div class="carousel-item">
+                        <img src="3.jpg" alt="招商图片3" class="carousel-img">
                     </div>
-                </div>
-
-                <!-- 经营理念 -->
-                <div class="intro-section">
-                    <h2 class="section-title">经营理念</h2>
-                    <div class="section-content">
-                        <p>本超市以“诚信互利、精研永进、购物体验，助推实体、线上线下相结合，立足当地，服务社区、带您体验式购物”的经营理念，每天都为您提供物优质的商品及满意的服务，满足您的日常生活购物所需！公司的发展离不开各行业老板及厂家业务代表的支持，您的认可及支持，是我们发展的最大收获及动力！欢迎大家前来考察合作！</p>
+                    <div class="carousel-item">
+                        <img src="4.jpg" alt="招商图片4" class="carousel-img">
                     </div>
-                </div>
-
-                <!-- 旗下门店 -->
-                <div class="stores-section">
-                    <div class="section-header">
-                        <h2 class="stores-title">旗下门店</h2>
+                    <div class="carousel-item">
+                        <img src="5.jpg" alt="招商图片5" class="carousel-img">
                     </div>
-                    <div class="section-content">
-                        <div class="overflow-x-auto">
-                            <table class="stores-table">
-                                <thead>
-                                    <tr>
-                                        <th>地区</th>
-                                        <th>名字</th>
-                                        <th>面积</th>
-                                        <th>经营年份</th>
-                                        <th>详细地址</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>重庆</td>
-                                        <td>中尚量贩超市</td>
-                                        <td>5000平</td>
-                                        <td>8</td>
-                                        <td>璧山区中大街278号</td>
-                                    </tr>
-                                    <tr>
-                                        <td>重庆</td>
-                                        <td>好润佳超市</td>
-                                        <td>1500平</td>
-                                        <td>5</td>
-                                        <td>璧山区解放东路与金凤街交叉西120米</td>
-                                    </tr>
-                                    <tr>
-                                        <td>重庆</td>
-                                        <td>好又多</td>
-                                        <td>3000平</td>
-                                        <td>3</td>
-                                        <td>九龙坡区华龙大道(轨道5号现中梁山站)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>重庆</td>
-                                        <td>城市便捷酒店</td>
-                                        <td>1000平/6层</td>
-                                        <td>2</td>
-                                        <td>重庆市璧山区青杠街道民安街116号</td>
-                                    </tr>
-                                    <tr>
-                                        <td>重庆</td>
-                                        <td>百合超市</td>
-                                        <td>7000平</td>
-                                        <td>招商招聘中</td>
-                                        <td>大足双桥经开区渝西商业广场百合超市</td>
-                                    </tr>
-                                    <tr>
-                                        <td>四川</td>
-                                        <td>百合超市</td>
-                                        <td>9900平</td>
-                                        <td>招商招聘中</td>
-                                        <td>内江市威远万达百合超市</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="carousel-item">
+                        <img src="6.jpg" alt="招商图片6" class="carousel-img">
                     </div>
                 </div>
             </div>
+            <p>外租区招商范围：黄金珠宝、服装、内衣、鞋类、眼镜、美甲、纹眉、护肤、美体、药房、快餐、快剪、花卉、手机、电玩、家居、家电等</p>
+            <p>诚聘职位：店长2名、生鲜经理、食百经理、堂食主厨</p>
         </section>
-
-        <!-- 招商部分 -->
-        <section class="investment-section">
-            <div class="container">
-                <h2 class="investment-title">招商合作</h2>
-                
-                <!-- 轮播图容器 -->
-                <div class="carousel-container" id="carousel">
-                    <div class="carousel-slides" id="carouselSlides">
-                        <!-- 轮播图将通过JS动态生成 -->
-                    </div>
-                    
-                    <!-- 轮播控制按钮 -->
-                    <button class="carousel-btn prev-btn" id="prevBtn">←</button>
-                    <button class="carousel-btn next-btn" id="nextBtn">→</button>
-                    
-                    <!-- 轮播指示器 -->
-                    <div class="carousel-indicators" id="carouselIndicators">
-                        <!-- 指示器将通过JS动态生成 -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 底部栏 -->
-    <footer class="bottom-bar">
-        <div class="container">
+        
+        <!-- 联系方式 -->
+        <section class="section contact-section">
+            <h2>联系方式</h2>
             <div class="contact-info">
-                <div class="contact-details">
-                    <h3>联系方式</h3>
-                    <p>李总：18779993039</p>
-                    <p>陈总：17383007372</p>
-                    <p>经理：17775581823</p>
+                <div class="contact-item">
+                    <strong>联系电话：</strong>
+                    <span>400-XXX-XXXX（示例）</span>
                 </div>
-                <div class="dycode-section">
-                    <h3>抖音号：45448051746</h3>
-                    <img data-src="dycode.png" alt="抖音二维码" class="dycode-img lazy-load">
+                <div class="contact-item">
+                    <strong>抖音号：</strong>
+                    <img src="dycode.png" alt="抖音二维码" class="dycode">
+                </div>
+                <div class="contact-item">
+                    <strong>财富地址：</strong>
+                    <span>四川省内江市威远万达百合超市</span>
+                </div>
+                <div class="contact-item">
+                    <strong>重庆地址：</strong>
+                    <span>重庆市大足双桥经开区渝西商业广场百合超市</span>
                 </div>
             </div>
-            <div class="copyright">
-                <p>© 2023 威远赣诚百佳百货超市有限公司 版权所有</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </div>
 
-    <!-- 引入JavaScript -->
+    <script>
+        // 轮播图功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 缓存管理
+            initCache();
+            
+            // 轮播图实现
+            const carousel = document.querySelector('.carousel-container');
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+            const itemCount = items.length;
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % itemCount;
+                updateCarousel();
+            }
+            
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+            }
+            
+            // 自动轮播
+            setInterval(nextSlide, 3000);
+        });
+        
+        // 缓存管理函数
+        function initCache() {
+            // 从project.js获取文件版本信息
+            fetch('project.js')
+                .then(response => response.json())
+                .then(versions => {
+                    // 检查并缓存HTML、CSS、JS
+                    cacheResource('index.html', versions.html);
+                    cacheResource('style.css', versions.css);
+                    cacheResource('script.js', versions.js);
+                });
+        }
+        
+        function cacheResource(url, version) {
+            const cacheKey = `cache_${url}_${version}`;
+            const cachedData = localStorage.getItem(cacheKey);
+            
+            if (!cachedData) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        localStorage.setItem(cacheKey, data);
+                    });
+            }
+        }
+    </script>
 </body>
 </html>
