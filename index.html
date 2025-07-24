@@ -16,14 +16,14 @@
             theme: {
                 extend: {
                     colors: {
-                        navbar: '#C9DC6A',
-                        history: '#E3F2FD',
-                        model: '#E8F5E9',
-                        products: '#FFF8E1',
-                        concept: '#F3E5F5',
-                        stores: '#E0F7FA',
-                        investment: '#FFEBEE',
-                        contact: '#263238',
+                        navbar: '#C9DC6A',      // 黄绿色导航栏
+                        history: '#E3F2FD',     // 浅蓝色企业历史
+                        model: '#E8F5E9',       // 浅绿色超市模式
+                        products: '#FFF8E1',    // 浅黄色销售商品
+                        concept: '#F3E5F5',     // 淡紫色经营理念
+                        stores: '#E0F7FA',      // 淡青色旗下门店
+                        investment: '#FFEBEE',  // 淡红色招商广告
+                        contact: '#263238',     // 深色联系方式
                     },
                 }
             }
@@ -49,6 +49,16 @@
             }
             .store-table th {
                 @apply bg-gray-100 font-semibold;
+            }
+            /* 轮播图加载状态样式 */
+            .carousel-placeholder {
+                @apply bg-gray-200 animate-pulse flex items-center justify-center;
+            }
+            .carousel-image {
+                @apply opacity-0 transition-opacity duration-500;
+            }
+            .carousel-image.loaded {
+                @apply opacity-100;
             }
         }
     </style>
@@ -204,7 +214,43 @@
                 <!-- 轮播图容器 -->
                 <div class="relative overflow-hidden rounded-lg border border-gray-300" style="height: 300px;">
                     <div id="carousel" class="flex transition-transform duration-500 h-full">
-                        <!-- 轮播图片将通过JS动态加载 -->
+                        <!-- 轮播图片固定6张，不动态适配数量变化 -->
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-1">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="1.jpg" alt="超市商品展示" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-1').style.display='none'">
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-2">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="2.jpg" alt="超市货架" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-2').style.display='none'">
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-3">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="3.jpg" alt="生鲜区" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-3').style.display='none'">
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-4">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="4.jpg" alt="促销活动" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-4').style.display='none'">
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-5">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="5.jpg" alt="顾客购物" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-5').style.display='none'">
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <div class="carousel-placeholder absolute inset-0" id="placeholder-6">
+                                <i class="fa fa-image text-4xl text-gray-400"></i>
+                            </div>
+                            <img src="6.jpg" alt="门店外观" class="w-full h-full object-contain carousel-image" onload="this.classList.add('loaded'); document.getElementById('placeholder-6').style.display='none'">
+                        </div>
                     </div>
                     
                     <!-- 轮播控制按钮 -->
@@ -217,7 +263,12 @@
                     
                     <!-- 轮播指示器 -->
                     <div id="indicators" class="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-                        <!-- 指示器将通过JS动态加载 -->
+                        <button class="w-2.5 h-2.5 rounded-full bg-red-500" data-index="0"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-400" data-index="1"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-400" data-index="2"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-400" data-index="3"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-400" data-index="4"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-gray-400" data-index="5"></button>
                     </div>
                 </div>
                 
@@ -231,18 +282,12 @@
                 <i class="fa fa-phone mr-2"></i>联系方式
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div>
-                    <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>李总：18779993039</p>
-                    <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>陈总：17383007372</p>
-                    <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>经理：17775581823</p>
-                    <p class="mb-2"><i class="fa fa-envelope mr-2"></i>电子邮箱：17775580372@189.com</p>
-                    <p><i class="fa fa-clock-o mr-2"></i>热线工作时间：周一至周五 9:00-17:00</p>
-                </div>
-                <div class="flex justify-center">
-                    <div class="bg-white p-3 rounded-lg">
-                        <img src="dycode.png" alt="百合超市抖音二维码" class="w-40 h-40">
-                    </div>
-                </div>
+                <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>李总：18779993039</p>
+                <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>陈总：17383007372</p>
+                <p class="mb-2"><i class="fa fa-mobile text-2xl mr-2"></i>经理：17775581823</p>
+                <p class="mb-2"><i class="fa fa-music text-2xl mr-2"></i>抖音：45448051746（id：威远百合超市）</p>
+                <p class="mb-2"><i class="fa fa-envelope mr-2"></i>电子邮箱：17775580372@189.com</p>
+                <p><i class="fa fa-clock-o mr-2"></i>热线工作时间：周一至周五 8:00-12：00，14：00-18:00</p>
             </div>
         </section>
     </main>
@@ -255,45 +300,12 @@
     <script>
         // 轮播图功能实现
         document.addEventListener('DOMContentLoaded', function() {
-            // 图片列表 - 实际环境中会根据目录中的图片自动生成
-            const images = [
-                { src: '1.jpg', alt: '超市商品展示' },
-                { src: '2.jpg', alt: '超市货架' },
-                { src: '3.jpg', alt: '生鲜区' },
-                { src: '4.jpg', alt: '促销活动' },
-                { src: '5.jpg', alt: '顾客购物' },
-                { src: '6.jpg', alt: '门店外观' }
-            ];
-            
             const carousel = document.getElementById('carousel');
             const indicators = document.getElementById('indicators');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
-            
+            const totalSlides = 6; // 固定6张图片
             let currentIndex = 0;
-            
-            // 初始化轮播图
-            function initCarousel() {
-                // 清空容器
-                carousel.innerHTML = '';
-                indicators.innerHTML = '';
-                
-                // 添加图片
-                images.forEach((img, index) => {
-                    const imgElement = document.createElement('div');
-                    imgElement.className = 'min-w-full h-full';
-                    imgElement.innerHTML = `<img src="${img.src}" alt="${img.alt}" class="w-full h-full object-contain">`;
-                    carousel.appendChild(imgElement);
-                    
-                    // 添加指示器
-                    const indicator = document.createElement('button');
-                    indicator.className = `w-2.5 h-2.5 rounded-full ${index === currentIndex ? 'bg-red-500' : 'bg-gray-400'}`;
-                    indicator.addEventListener('click', () => goToSlide(index));
-                    indicators.appendChild(indicator);
-                });
-                
-                updateCarousel();
-            }
             
             // 更新轮播图位置
             function updateCarousel() {
@@ -314,13 +326,13 @@
             
             // 下一张
             function nextSlide() {
-                currentIndex = (currentIndex + 1) % images.length;
+                currentIndex = (currentIndex + 1) % totalSlides;
                 updateCarousel();
             }
             
             // 上一张
             function prevSlide() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarousel();
             }
             
@@ -340,6 +352,15 @@
                 autoplayInterval = setInterval(nextSlide, 5000);
             });
             
+            // 指示器点击事件
+            indicators.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', () => {
+                    clearInterval(autoplayInterval);
+                    goToSlide(parseInt(button.dataset.index));
+                    autoplayInterval = setInterval(nextSlide, 5000);
+                });
+            });
+            
             // 鼠标悬停时暂停自动轮播
             carousel.parentElement.addEventListener('mouseenter', () => {
                 clearInterval(autoplayInterval);
@@ -349,9 +370,6 @@
             carousel.parentElement.addEventListener('mouseleave', () => {
                 autoplayInterval = setInterval(nextSlide, 5000);
             });
-            
-            // 初始化
-            initCarousel();
             
             // 响应式调整
             window.addEventListener('resize', updateCarousel);
