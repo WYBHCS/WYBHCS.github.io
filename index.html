@@ -1,152 +1,175 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>百合集团官网</title>
-    <link rel="icon" href="/logo.ico">
+    <link rel="icon" href="ico.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container mx-auto px-4 h-16">
-            <div class="flex h-full">
-                <div class="nav-logo w-[10%] flex items-center justify-center">
-                    <img src="logo.png" alt="百合集团logo" class="max-h-10">
-                </div>
-                <button id="storeBtn" class="nav-item w-[45%] flex items-center justify-center active" data-target="store-content">
-                    门店
-                </button>
-                <button id="investBtn" class="nav-item w-[45%] flex items-center justify-center" data-target="invest-content">
-                    招商
-                </button>
+    <!-- 顶栏 -->
+    <header class="top-bar">
+        <div class="container">
+            <div class="top-content">
+                <h1 class="main-title">百合超市</h1>
+                <img src="logo.png" alt="百合超市logo" class="logo-img">
             </div>
         </div>
-    </nav>
-    <main class="container mx-auto px-4 py-8">
-        <section id="store-content" class="content-section">
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <h2 class="text-2xl font-bold mb-4 text-center">企业简介</h2>
-                <h3 class="text-xl font-semibold mb-3">威远赣诚百佳百货超市有限公司</h3>
-                <h4 class="mb-4">百合超市是一家具备标准传统商超背景，向零售行业领先顶流转变中的成长发展企业，在转变过程中不断培育发展起来，能一站式满足顾客购物，休闲、餐食加工的现代综合式购物广场。以经营生鲜农业产品为主，日用百货、服装鞋帽为辅的商业零售企业。本超市以“诚信互利、精研永进、购物体验，助推实体、线上线下相结合，立足当地，服务社区”的经营理念，每天都为您提供物美价廉的商品及满意的服务，满足您的日常生活所需。百合超市前身是广东粤客来超市，成立于2009年，2016年进军重庆市场，旗下有好润佳、好又多等门店。秉承着向行业领先者胖东来、鲜风等学习，引入先进模式，迄今为止，百合超市在川渝地区一共开设有5家门店。</h4>
-            </div>
+    </header>
 
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold mb-6 text-center">旗下门店信息</h2>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="py-3 px-4 text-left">地区</th>
-                                <th class="py-3 px-4 text-left">名字</th>
-                                <th class="py-3 px-4 text-left">面积</th>
-                                <th class="py-3 px-4 text-left">经营年份</th>
-                                <th class="py-3 px-4 text-left">详细地址</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr>
-                                <td class="py-3 px-4">重庆青杠</td>
-                                <td class="py-3 px-4">中尚量贩超市</td>
-                                <td class="py-3 px-4">5000平</td>
-                                <td class="py-3 px-4">8</td>
-                                <td class="py-3 px-4">重庆市璧山区中大街278号</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4">重庆来凤</td>
-                                <td class="py-3 px-4">好润佳超市</td>
-                                <td class="py-3 px-4">1500平</td>
-                                <td class="py-3 px-4">5</td>
-                                <td class="py-3 px-4">重庆市璧山区解放东路与金凤街交叉西120米</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4">重庆中梁山</td>
-                                <td class="py-3 px-4">好又多</td>
-                                <td class="py-3 px-4">3000平</td>
-                                <td class="py-3 px-4">3</td>
-                                <td class="py-3 px-4">重庆市九龙坡区华龙大道(轨道5号线中梁山站)</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4">重庆青杠</td>
-                                <td class="py-3 px-4">城市便捷酒店</td>
-                                <td class="py-3 px-4">1000平/6层</td>
-                                <td class="py-3 px-4">2</td>
-                                <td class="py-3 px-4">重庆市璧山区青杠街道民安街116号</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4">重庆大足区</td>
-                                <td class="py-3 px-4">百合超市</td>
-                                <td class="py-3 px-4">7000平</td>
-                                <td class="py-3 px-4">建设中</td>
-                                <td class="py-3 px-4">重庆市大足双桥经开区渝西商业广场百合超市</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4">内江威远</td>
-                                <td class="py-3 px-4">百合超市</td>
-                                <td class="py-3 px-4">9900平</td>
-                                <td class="py-3 px-4">建设中</td>
-                                <td class="py-3 px-4">四川省内江市威远万达百合超市</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!-- 中间栏 -->
+    <main class="middle-bar">
+        <!-- 企业简介部分 -->
+        <section class="company-intro">
+            <div class="container">
+                <!-- 企业历史 -->
+                <div class="intro-section">
+                    <h2 class="section-title">企业历史</h2>
+                    <div class="section-content">
+                        <p>百合超市前身是广东粤客来超市，成立于2009年！2016年进军重庆市场，重庆旗下有好润佳、好又多，中尚购物等商超门店，另有快捷酒店等公司其他业态。秉承着向行业领跑者胖东来、盒马鲜生，山姆会员店，河南鲜风，永辉调改门店等优秀企业学习，引入超前理念及优秀模式，不断发展壮大！</p>
+                    </div>
+                </div>
+
+                <!-- 超市模式 -->
+                <div class="intro-section">
+                    <h2 class="section-title">超市模式</h2>
+                    <div class="section-content">
+                        <p>威远百合超市是一家具备标准传统商超背景，向零售行业领先顶流转变中的成长发展企业，在转变过程中不断培育发展起来，能一站式满足顾客购物、休闲、餐食、现场加工的现代综合式购物广场。</p>
+                    </div>
+                </div>
+
+                <!-- 销售商品 -->
+                <div class="intro-section">
+                    <h2 class="section-title">销售商品</h2>
+                    <div class="section-content">
+                        <p>以经营优质生鲜农业产品，生猛海鲜产品，鲜肉家禽，加工熟食，地方特产，特色餐饮，冷冻冷藏产品，休闲零食，酒水奶饮，米面粮油，网红产品，日用百货、小家电，儿童玩具，文体用品，服装鞋帽等精选类别品牌。</p>
+                    </div>
+                </div>
+
+                <!-- 经营理念 -->
+                <div class="intro-section">
+                    <h2 class="section-title">经营理念</h2>
+                    <div class="section-content">
+                        <p>本超市以“诚信互利、精研永进、购物体验，助推实体、线上线下相结合，立足当地，服务社区、带您体验式购物”的经营理念，每天都为您提供物优质的商品及满意的服务，满足您的日常生活购物所需！公司的发展离不开各行业老板及厂家业务代表的支持，您的认可及支持，是我们发展的最大收获及动力！欢迎大家前来考察合作！</p>
+                    </div>
+                </div>
+
+                <!-- 旗下门店 -->
+                <div class="stores-section">
+                    <div class="section-header">
+                        <h2 class="stores-title">旗下门店</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="overflow-x-auto">
+                            <table class="stores-table">
+                                <thead>
+                                    <tr>
+                                        <th>地区</th>
+                                        <th>名字</th>
+                                        <th>面积</th>
+                                        <th>经营年份</th>
+                                        <th>详细地址</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>重庆</td>
+                                        <td>中尚量贩超市</td>
+                                        <td>5000平</td>
+                                        <td>8</td>
+                                        <td>璧山区中大街278号</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重庆</td>
+                                        <td>好润佳超市</td>
+                                        <td>1500平</td>
+                                        <td>5</td>
+                                        <td>璧山区解放东路与金凤街交叉西120米</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重庆</td>
+                                        <td>好又多</td>
+                                        <td>3000平</td>
+                                        <td>3</td>
+                                        <td>九龙坡区华龙大道(轨道5号现中梁山站)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重庆</td>
+                                        <td>城市便捷酒店</td>
+                                        <td>1000平/6层</td>
+                                        <td>2</td>
+                                        <td>重庆市璧山区青杠街道民安街116号</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重庆</td>
+                                        <td>百合超市</td>
+                                        <td>7000平</td>
+                                        <td>招商招聘中</td>
+                                        <td>大足双桥经开区渝西商业广场百合超市</td>
+                                    </tr>
+                                    <tr>
+                                        <td>四川</td>
+                                        <td>百合超市</td>
+                                        <td>9900平</td>
+                                        <td>招商招聘中</td>
+                                        <td>内江市威远万达百合超市</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="invest-content" class="content-section hidden">
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <h2 class="text-2xl font-bold mb-6 text-center">招商合作</h2>
-                <div class="relative overflow-hidden rounded-lg shadow-md mb-6" id="carousel">
-                    <div class="carousel-slides flex transition-transform duration-500">
+
+        <!-- 招商部分 -->
+        <section class="investment-section">
+            <div class="container">
+                <h2 class="investment-title">招商合作</h2>
+                
+                <!-- 轮播图容器 -->
+                <div class="carousel-container" id="carousel">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <!-- 轮播图将通过JS动态生成 -->
                     </div>
-                    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center" id="prevBtn">
-                        <span>←</span>
-                    </button>
-                    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white w-8 h-8 rounded-full flex items-center justify-center" id="nextBtn">
-                        <span>→</span>
-                    </button>
-                    <div class="absolute bottom-2 left-0 right-0 flex justify-center gap-1" id="indicators">
-                    </div>
-                </div>
-                <div class="mt-6">
-                    <h3 class="text-xl font-semibold mb-4">门店招商信息</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="p-4 border border-gray-200 rounded-lg">
-                            <h4 class="font-bold mb-2">重庆大足区百合超市</h4>
-                            <p><span class="font-semibold">面积：</span>7000平</p>
-                            <p><span class="font-semibold">状态：</span>建设中</p>
-                            <p><span class="font-semibold">地址：</span>重庆市大足双桥经开区渝西商业广场百合超市</p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg">
-                            <h4 class="font-bold mb-2">内江威远百合超市</h4>
-                            <p><span class="font-semibold">面积：</span>9900平</p>
-                            <p><span class="font-semibold">状态：</span>建设中</p>
-                            <p><span class="font-semibold">地址：</span>四川省内江市威远万达百合超市</p>
-                        </div>
+                    
+                    <!-- 轮播控制按钮 -->
+                    <button class="carousel-btn prev-btn" id="prevBtn">←</button>
+                    <button class="carousel-btn next-btn" id="nextBtn">→</button>
+                    
+                    <!-- 轮播指示器 -->
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <!-- 指示器将通过JS动态生成 -->
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h3 class="text-lg font-bold mb-2">联系方式</h3>
-                    <p class="mb-1">李总：18779993039</p>
-                    <p class="mb-1">陈总：17383007372</p>
+
+    <!-- 底部栏 -->
+    <footer class="bottom-bar">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-details">
+                    <h3>联系方式</h3>
+                    <p>李总：18779993039</p>
+                    <p>陈总：17383007372</p>
                     <p>经理：17775581823</p>
                 </div>
-                <div class="flex items-center">
-                    <span class="mr-3">抖音号：</span>
-                    <img data-src="/dycode.png" alt="抖音二维码" class="w-24 h-24 rounded lazy-load">
+                <div class="dycode-section">
+                    <h3>抖音号：45448051746</h3>
+                    <img data-src="dycode.png" alt="抖音二维码" class="dycode-img lazy-load">
                 </div>
             </div>
-            <div class="mt-4 text-center text-gray-400 text-sm">
+            <div class="copyright">
                 <p>© 2023 威远赣诚百佳百货超市有限公司 版权所有</p>
             </div>
         </div>
     </footer>
+
+    <!-- 引入JavaScript -->
 </body>
 </html>
